@@ -1,0 +1,11 @@
+This folder contains the event images.
+Copy the following images from the Flutter project:
+- college_logo.png
+- event_logo.png
+- iei.png
+- pheonix.png
+- register_btn.png
+- event1_bg.png
+- event2_bg.png
+- event3_bg.png
+- event4_bg.png.jpg
