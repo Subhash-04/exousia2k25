@@ -4,9 +4,10 @@ import './HomeScreen.css';
 
 interface HomeScreenProps {
   onNavigateToEvents: () => void;
+  onNavigateToContact: () => void;
 }
 
-const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigateToEvents }) => {
+const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigateToEvents, onNavigateToContact }) => {
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
@@ -40,7 +41,12 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigateToEvents }) => {
             <h1 className="main-title">EXOUSIA 2K25</h1>
           </div>
           <img src="/assets/images/event_logo.png" alt="Event Logo" className="header-logo" />
-          <img src="/assets/images/iei.png" alt="IEI Logo" className="header-iei-logo" />
+          <div className="header-right">
+            <img src="/assets/images/iei.png" alt="IEI Logo" className="header-iei-logo" />
+            <button className="header-contact-btn" onClick={onNavigateToContact}>
+              Contact Us
+            </button>
+          </div>
         </div>
       </header>
 
@@ -62,8 +68,8 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigateToEvents }) => {
             </p>
           </div>
 
-          {/* Register Button */}
-          <div className="register-section">
+          {/* Action Buttons */}
+          <div className="action-buttons">
             <button className="register-btn" onClick={onNavigateToEvents}>
               <img src="/assets/images/register_btn.png" alt="Register" className="register-btn-img" />
             </button>

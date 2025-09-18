@@ -23,6 +23,6 @@ export const events: Event[] = [
     id: '4',
     title: 'Code Breaker',
     description: 'DAY-2 Event.. \n\nEnter the arena where logic meets creativity, and every second pushes your mind to think sharper. Code Breaker is a high-energy challenge that will test your problem-solving instincts, quick thinking, and technical edge. With twists waiting at every turn, it\'s a race against time where only the smartest strategies can crack the code.Whether you\'re a coding enthusiast, a circuit tinkerer, or someone who loves debugging mysteries, this event is especially crafted for the curious minds of CSE, ECE, and allied branches. Get ready — because in this challenge, every little detail matters, and only the best will rise as true code breakers. ⚡',
-    imagePath: '/assets/images/event4_bg.png.jpg',
+    imagePath: '/assets/images/event4_bg.png',
   },
 ];

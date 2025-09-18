@@ -1,7 +1,8 @@
-import React from 'react';
-import AnimatedBackground from './AnimatedBackground';
+import React, { useState } from 'react';
 import EventCard from './EventCard';
+import EventDetail from './EventDetail';
 import { events } from '../data/events';
+import { Event } from '../types/Event';
 import './EventsPage.css';
 
 interface EventsPageProps {
@@ -9,20 +10,29 @@ interface EventsPageProps {
 }
 
 const EventsPage: React.FC<EventsPageProps> = ({ onBack }) => {
-  const handleRegister = () => {
-    window.open('https://forms.gle/3cxHh6MkqKRZm9V96', '_blank');
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+
+  const handleMoreDetails = (event: Event) => {
+    setSelectedEvent(event);
   };
 
+  const handleBackToEvents = () => {
+    setSelectedEvent(null);
+  };
+
+  if (selectedEvent) {
+    return <EventDetail event={selectedEvent} onBack={handleBackToEvents} />;
+  }
+
   return (
-    <div className="events-page">
-      <AnimatedBackground theme="blue" />
-      
-      {/* Header */}
-      <header className="events-header">
-        <button className="back-btn" onClick={onBack}>
-          ← Back
-        </button>
-      </header>
+    <div 
+      className="events-page"
+      style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/assets/images/events_bg.png)` }}
+    >
+      {/* Floating Back Button */}
+      <button className="floating-back-btn" onClick={onBack}>
+        ← Back
+      </button>
 
       {/* Main Content */}
       <main className="events-main">
@@ -40,7 +50,7 @@ const EventsPage: React.FC<EventsPageProps> = ({ onBack }) => {
               <EventCard 
                 key={event.id} 
                 event={event} 
-                onRegister={handleRegister}
+                onMoreDetails={handleMoreDetails}
               />
             ))}
           </div>

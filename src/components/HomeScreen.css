@@ -38,7 +38,34 @@
 .header-iei-logo {
   width: 80px;
   height: auto;
+}
+
+.header-right {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-contact-btn {
+  background: linear-gradient(135deg, #ff4444, #cc3333);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3);
+  min-width: 100px;
+  white-space: nowrap;
+}
+
+.header-contact-btn:hover {
+  background: linear-gradient(135deg, #cc3333, #aa2222);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 68, 68, 0.4);
 }
 
 
@@ -76,6 +103,14 @@
   margin-bottom: 32px;
 }
 
+.action-buttons {
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
 .welcome-title {
   font-size: 60px;
   font-weight: bold;
@@ -93,17 +128,11 @@
   font-weight: bold;
 }
 
-.register-section {
-  margin-bottom: 32px;
-}
-
 .register-btn {
-  background: none;
+  background: transparent;
   border: none;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  border-radius: 18px;
-  overflow: hidden;
+  transition: transform 0.3s;
 }
 
 .register-btn:hover {
@@ -115,6 +144,8 @@
   height: 150px;
   object-fit: contain;
 }
+
+
 
 .phoenix-section {
   margin-top: 0;
@@ -165,6 +196,16 @@
     width: 50px;
   }
   
+  .header-right {
+    gap: 12px;
+  }
+  
+  .header-contact-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+    min-width: 80px;
+  }
+  
   .main-title {
     font-size: 18px;
     letter-spacing: 1px;
@@ -192,6 +233,8 @@
     height: 125px;
   }
   
+
+  
   .phoenix-logo {
     width: 180px;
   }
@@ -213,6 +256,16 @@
   
   .header-iei-logo {
     width: 40px;
+  }
+  
+  .header-right {
+    gap: 8px;
+  }
+  
+  .header-contact-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+    min-width: 70px;
   }
   
   .main-title {
@@ -258,6 +311,8 @@
     height: 100px;
   }
   
+
+  
   .phoenix-logo {
     width: 150px;
   }
@@ -275,6 +330,16 @@
   
   .header-iei-logo {
     width: 35px;
+  }
+  
+  .header-right {
+    gap: 6px;
+  }
+  
+  .header-contact-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+    min-width: 60px;
   }
   
   .main-title {
@@ -297,6 +362,8 @@
     width: 180px;
     height: 90px;
   }
+  
+
   
   .phoenix-logo {
     width: 120px;
