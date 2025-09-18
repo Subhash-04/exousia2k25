@@ -1,13 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import HomeScreen from './components/HomeScreen';
 import EventsPage from './components/EventsPage';
 import Contact from './components/Contact';
+import { imagePreloader } from './utils/imagePreloader';
 import './App.css';
 
 type Screen = 'home' | 'events' | 'contact';
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('home');
+
+  // Preload background images when app starts
+  useEffect(() => {
+    const preloadImages = async () => {
+      try {
+        await imagePreloader.preloadBackgroundImages();
+      } catch (error) {
+        console.warn('Background image preloading failed:', error);
+      }
+    };
+
+    preloadImages();
+  }, []);
 
   const handleNavigateToEvents = () => {
     setCurrentScreen('events');

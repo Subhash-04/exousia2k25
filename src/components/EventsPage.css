@@ -10,6 +10,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  transition: background-image 0.3s ease-in-out;
 }
 
 /* Mobile-specific background optimization */

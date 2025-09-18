@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { imagePreloader } from '../utils/imagePreloader';
 import './Contact.css';
 
 interface ContactProps {
@@ -6,11 +7,19 @@ interface ContactProps {
 }
 
 const Contact: React.FC<ContactProps> = ({ onBack }) => {
+  const [backgroundImage, setBackgroundImage] = useState<string>('/assets/images/squid_game_bg.png');
+
+  useEffect(() => {
+    // Get preloaded background image
+    const preloadedBg = imagePreloader.getPreloadedImage('squid_game_bg', '/assets/images/squid_game_bg.png');
+    setBackgroundImage(preloadedBg);
+  }, []);
+
   return (
     <div className="contact-page">
       <div 
         className="contact-background"
-        style={{ backgroundImage: 'url(/assets/images/squid_game_bg.png)' }}
+        style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="contact-overlay"></div>
       </div>
